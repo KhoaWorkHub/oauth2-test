@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
+export default function App() {
+  const handleLogin = () => {
+    // this goes to your Spring Boot, which then 302→Google
+    window.location.href = 'http://localhost:8080/oauth2/authorization/google';
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: 20 }}>
+      <h1>Welcome to Mosaic Store</h1>
+      <button onClick={handleLogin}>
+        🔐 Sign in with Google
+      </button>
     </div>
   );
 }
-
-export default App;
